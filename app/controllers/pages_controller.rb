@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def contact_us
   end
+
+  def sign_in
+  end
 end

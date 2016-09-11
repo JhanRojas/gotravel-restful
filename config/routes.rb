@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'pages/contact_us'
 
+  get 'pages/sign_in'
+
   resources :hotels
   
   root 'pages#home'
