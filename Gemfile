@@ -45,3 +45,10 @@ group :development do
   gem 'spring'
 end
 
+# Boostrap Frontend Framework Support
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails','<= 3.2.0'
+
+# Simplified HTML Form Management
+gem 'simple_form'
