@@ -1,10 +1,3 @@
 # gotravel-restful
-Servicio Rest de GoTravel
-# carlos Miyashiro Prueba
-# Juan Yabiku Prueba
-# Raul Godoy
 
-Testing Git by joli
-Testing Git by rgodoy
-Testing Git by carlosmiya
-Testing Git by Juan
+This project contains the main web page and the rest service.
