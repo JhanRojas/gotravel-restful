@@ -52,3 +52,6 @@ gem 'twitter-bootstrap-rails','<= 3.2.0'
 
 # Simplified HTML Form Management
 gem 'simple_form'
+
+# Devise
+gem 'devise'
