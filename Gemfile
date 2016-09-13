@@ -55,3 +55,6 @@ gem 'simple_form'
 
 # Devise
 gem 'devise'
+
+# Devise Bootstrap
+gem 'devise-bootstrap-views'
