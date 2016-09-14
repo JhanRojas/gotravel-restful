@@ -1,6 +1,8 @@
 class HotelsController < ApplicationController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
+  layout "appadmin"
+
   # GET /hotels
   # GET /hotels.json
   def index

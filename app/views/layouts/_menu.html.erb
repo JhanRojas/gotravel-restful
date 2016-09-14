@@ -1,6 +1,26 @@
-<li><%= link_to "Home", pages_home_path  %></li>
-<li><%= link_to "Package", pages_tour_package_path  %></li>
-<li><%= link_to "Flight", pages_flight_path  %></li>
-<li><%= link_to "Hotel", pages_hotel_path  %></li>
-<li><%= link_to "Restaurant", pages_restaurant_path  %></li>
-<li><%= link_to "Contact Us", pages_contact_us_path  %></li>
+<li>
+    <%= link_to "#" do %>
+        <i class="fa fa-dashboard fa-fw"></i> Dashboard
+    <% end %>
+</li>
+<li>
+    <%= link_to "/pages/tour_package" do %>
+        <i class="fa fa-briefcase fa-fw"></i> Tour Package
+    <% end %>
+</li>
+<li>
+    <%= link_to "/pages/flight" do %>
+        <i class="fa fa-plane fa-fw"></i> Flight
+    <% end %>
+</li>
+<li>
+    <%= link_to "/hotels" do %>
+        <i class="fa fa-home fa-fw"></i> Hotel
+    <% end %>
+</li>
+<li>
+    <%= link_to "/pages/restaurant" do %>
+        <i class="fa fa-cutlery fa-fw"></i> Restaurant
+    <% end %>
+</li>
+
