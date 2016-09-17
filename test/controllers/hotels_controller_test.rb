@@ -18,7 +18,7 @@ class HotelsControllerTest < ActionController::TestCase
 
   test "should create hotel" do
     assert_difference('Hotel.count') do
-      post :create, hotel: { description: @hotel.description, name: @hotel.name }
+      post :create, hotel: { address: @hotel.address, description: @hotel.description, gps_coordinates: @hotel.gps_coordinates, name: @hotel.name, phone_numer: @hotel.phone_numer, raiting: @hotel.raiting }
     end
 
     assert_redirected_to hotel_path(assigns(:hotel))
@@ -35,7 +35,7 @@ class HotelsControllerTest < ActionController::TestCase
   end
 
   test "should update hotel" do
-    patch :update, id: @hotel, hotel: { description: @hotel.description, name: @hotel.name }
+    patch :update, id: @hotel, hotel: { address: @hotel.address, description: @hotel.description, gps_coordinates: @hotel.gps_coordinates, name: @hotel.name, phone_numer: @hotel.phone_numer, raiting: @hotel.raiting }
     assert_redirected_to hotel_path(assigns(:hotel))
   end
 

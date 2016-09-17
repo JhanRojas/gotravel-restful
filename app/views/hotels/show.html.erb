@@ -10,5 +10,25 @@
   <%= @hotel.description %>
 </p>
 
+<p>
+  <strong>Address:</strong>
+  <%= @hotel.address %>
+</p>
+
+<p>
+  <strong>Phone numer:</strong>
+  <%= @hotel.phone_numer %>
+</p>
+
+<p>
+  <strong>Raiting:</strong>
+  <%= @hotel.raiting %>
+</p>
+
+<p>
+  <strong>Gps coordinates:</strong>
+  <%= @hotel.gps_coordinates %>
+</p>
+
 <%= link_to 'Edit', edit_hotel_path(@hotel) %> |
 <%= link_to 'Back', hotels_path %>

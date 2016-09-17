@@ -1,10 +1,10 @@
 class HotelsController < ApplicationController
-
+  
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
-
+  
   layout "appadmin"
 
   # GET /hotels
@@ -75,6 +75,6 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :description)
+      params.require(:hotel).permit(:name, :description, :address, :phone_numer, :raiting, :gps_coordinates)
     end
 end

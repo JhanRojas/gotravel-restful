@@ -3,7 +3,15 @@
 one:
   name: MyString
   description: MyString
+  address: MyString
+  phone_numer: MyString
+  raiting: 1
+  gps_coordinates: MyString
 
 two:
   name: MyString
   description: MyString
+  address: MyString
+  phone_numer: MyString
+  raiting: 1
+  gps_coordinates: MyString
