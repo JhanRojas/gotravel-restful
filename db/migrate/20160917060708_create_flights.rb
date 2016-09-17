@@ -5,8 +5,8 @@ class CreateFlights < ActiveRecord::Migration
       t.string :destino
       t.date :partida
       t.date :regreso
-      t.int :adultos
-      t.int :menores
+      t.integer :adultos
+      t.integer :menores
       t.float :precio
 
       t.timestamps null: false

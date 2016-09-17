@@ -5,8 +5,8 @@ one:
   destino: MyString
   partida: 2016-09-17
   regreso: 2016-09-17
-  adultos: 
-  menores: 
+  adultos: 1
+  menores: 1
   precio: 1.5
 
 two:
@@ -14,6 +14,6 @@ two:
   destino: MyString
   partida: 2016-09-17
   regreso: 2016-09-17
-  adultos: 
-  menores: 
+  adultos: 1
+  menores: 1
   precio: 1.5
