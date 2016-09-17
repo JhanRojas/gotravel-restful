@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  layout "appadmin"
 
   # GET /flights
   # GET /flights.json
