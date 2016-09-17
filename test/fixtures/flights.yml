@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origen: MyString
+  destino: MyString
+  partida: 2016-09-17
+  regreso: 2016-09-17
+  adultos: 
+  menores: 
+  precio: 1.5
+
+two:
+  origen: MyString
+  destino: MyString
+  partida: 2016-09-17
+  regreso: 2016-09-17
+  adultos: 
+  menores: 
+  precio: 1.5

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origen:</strong>
+  <%= @flight.origen %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @flight.destino %>
+</p>
+
+<p>
+  <strong>Partida:</strong>
+  <%= @flight.partida %>
+</p>
+
+<p>
+  <strong>Regreso:</strong>
+  <%= @flight.regreso %>
+</p>
+
+<p>
+  <strong>Adultos:</strong>
+  <%= @flight.adultos %>
+</p>
+
+<p>
+  <strong>Menores:</strong>
+  <%= @flight.menores %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @flight.precio %>
+</p>
+
+<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<%= link_to 'Back', flights_path %>
