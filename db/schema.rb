@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917071133) do
+ActiveRecord::Schema.define(version: 20160918151718) do
 
   create_table "flights", force: :cascade do |t|
     t.string   "origen",     limit: 255
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20160917071133) do
     t.string   "gps_coordinates", limit: 255
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "description", limit: 255
+    t.integer  "level",       limit: 4
+    t.text     "websiteurl",  limit: 65535
+    t.text     "logourl",     limit: 65535
+    t.integer  "status",      limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|

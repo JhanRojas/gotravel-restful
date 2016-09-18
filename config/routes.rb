@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :restaurants
   resources :hotels
   resources :flights
   devise_for :users, :controllers => {:sessions => "sessions"}
