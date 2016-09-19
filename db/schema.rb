@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912014730) do
+ActiveRecord::Schema.define(version: 20160919210255) do
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.text     "description", limit: 65535
+    t.integer  "starts",      limit: 4
+    t.text     "websiteurl",  limit: 65535
+    t.text     "photourl",    limit: 65535
+    t.integer  "status",      limit: 4
+    t.integer  "place_id",    limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "type",        limit: 255
+    t.decimal  "price",                     precision: 10
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "users", force: :cascade do |t|
