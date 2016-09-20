@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918151718) do
+ActiveRecord::Schema.define(version: 20160919054053) do
 
   create_table "flights", force: :cascade do |t|
     t.string   "origen",     limit: 255
@@ -26,14 +26,27 @@ ActiveRecord::Schema.define(version: 20160918151718) do
   end
 
   create_table "hotels", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "description",     limit: 255
-    t.string   "address",         limit: 255
-    t.string   "phone_numer",     limit: 255
-    t.integer  "raiting",         limit: 4
-    t.string   "gps_coordinates", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "name",                 limit: 255
+    t.string   "description",          limit: 255
+    t.integer  "starts",               limit: 4
+    t.string   "address",              limit: 255
+    t.string   "city",                 limit: 255
+    t.string   "location_coordinates", limit: 255
+    t.string   "phone",                limit: 255
+    t.string   "raiting",              limit: 255
+    t.integer  "locations_id",         limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "hotels", ["locations_id"], name: "index_hotels_on_locations_id", using: :btree
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "country",       limit: 255
+    t.string   "country_state", limit: 255
+    t.string   "city_district", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -46,6 +59,18 @@ ActiveRecord::Schema.define(version: 20160918151718) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string   "type",          limit: 255
+    t.string   "description",   limit: 255
+    t.integer  "number_people", limit: 4
+    t.decimal  "price",                     precision: 10
+    t.integer  "hotels_id",     limit: 4
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  add_index "rooms", ["hotels_id"], name: "index_rooms_on_hotels_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -65,4 +90,6 @@ ActiveRecord::Schema.define(version: 20160918151718) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "hotels", "locations", column: "id"
+  add_foreign_key "rooms", "hotels", column: "id"
 end

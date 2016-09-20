@@ -3,15 +3,21 @@
 one:
   name: MyString
   description: MyString
+  starts: 1
   address: MyString
-  phone_numer: MyString
-  raiting: 1
-  gps_coordinates: MyString
+  city: MyString
+  location_coordinates: MyString
+  phone: MyString
+  raiting: MyString
+  locations_id: 
 
 two:
   name: MyString
   description: MyString
+  starts: 1
   address: MyString
-  phone_numer: MyString
-  raiting: 1
-  gps_coordinates: MyString
+  city: MyString
+  location_coordinates: MyString
+  phone: MyString
+  raiting: MyString
+  locations_id: 

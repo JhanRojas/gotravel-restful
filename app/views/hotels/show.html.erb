@@ -11,13 +11,28 @@
 </p>
 
 <p>
+  <strong>Starts:</strong>
+  <%= @hotel.starts %>
+</p>
+
+<p>
   <strong>Address:</strong>
   <%= @hotel.address %>
 </p>
 
 <p>
-  <strong>Phone numer:</strong>
-  <%= @hotel.phone_numer %>
+  <strong>City:</strong>
+  <%= @hotel.city %>
+</p>
+
+<p>
+  <strong>Location coordinates:</strong>
+  <%= @hotel.location_coordinates %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @hotel.phone %>
 </p>
 
 <p>
@@ -26,8 +41,8 @@
 </p>
 
 <p>
-  <strong>Gps coordinates:</strong>
-  <%= @hotel.gps_coordinates %>
+  <strong>Locations:</strong>
+  <%= @hotel.locations %>
 </p>
 
 <%= link_to 'Edit', edit_hotel_path(@hotel) %> |
