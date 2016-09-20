@@ -1,4 +1,4 @@
-<%= simple_form_for(@hotel) do |f| %>
+<%= simple_form_for @hotel do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -6,11 +6,12 @@
     <%= f.input :description %>
     <%= f.input :starts %>
     <%= f.input :address %>
-    <%= f.input :city %>
     <%= f.input :location_coordinates %>
     <%= f.input :phone %>
     <%= f.input :raiting %>
-    <%= f.association :locations %>
+    <%= f.input :country, label: "Country", collection: CountryStateSelect.countries_collection %>
+    <%= f.input :state, CountryStateSelect.state_options(label: "State / Province", form: f, field_names: { :country => :country, :state => :home_state } ) %>
+    <%= f.input :city, CountryStateSelect.city_options(label: "City ", form: f, field_names: {  :state => :state, :city => :home_city } ) %>
   </div>
 
   <div class="form-actions">

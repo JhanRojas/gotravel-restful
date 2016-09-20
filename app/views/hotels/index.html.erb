@@ -29,7 +29,7 @@
         <td><%= hotel.location_coordinates %></td>
         <td><%= hotel.phone %></td>
         <td><%= hotel.raiting %></td>
-        <td><%= hotel.location.country %></td>
+        <td><%= @locations =Location.find(hotel.locations_id).country %></td>
         <td><%= link_to 'Show', hotel %></td>
         <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
         <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>

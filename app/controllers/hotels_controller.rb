@@ -17,6 +17,7 @@ class HotelsController < ApplicationController
   # GET /hotels/new
   def new
     @hotel = Hotel.new
+    build_location_form
   end
 
   # GET /hotels/1/edit
@@ -61,6 +62,15 @@ class HotelsController < ApplicationController
       format.html { redirect_to hotels_url, notice: 'Hotel was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+  def build_location_form
+    @hotel ||= HotelForm.new(Location.new)
+  end
+  
+  def load_location_form
+    @hotel ||= HotelForm.new(Location.find(params[:id]))
   end
 
   private

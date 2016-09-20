@@ -30,23 +30,22 @@ ActiveRecord::Schema.define(version: 20160919210255) do
     t.string   "description",          limit: 255
     t.integer  "starts",               limit: 4
     t.string   "address",              limit: 255
-    t.string   "city",                 limit: 255
     t.string   "location_coordinates", limit: 255
     t.string   "phone",                limit: 255
     t.string   "raiting",              limit: 255
-    t.integer  "locations_id",         limit: 4
+    t.string   "country",              limit: 255
+    t.string   "state",                limit: 255
+    t.string   "city",                 limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
 
-  add_index "hotels", ["locations_id"], name: "index_hotels_on_locations_id", using: :btree
-
   create_table "locations", force: :cascade do |t|
-    t.string   "country",       limit: 255
-    t.string   "country_state", limit: 255
-    t.string   "city_district", limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "country",    limit: 255
+    t.string   "state",      limit: 255
+    t.string   "city",       limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "places", force: :cascade do |t|
