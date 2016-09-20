@@ -17,6 +17,7 @@ class HotelsController < ApplicationController
   # GET /hotels/new
   def new
     @hotel = Hotel.new
+    build_location_form
   end
 
   # GET /hotels/1/edit
@@ -63,6 +64,15 @@ class HotelsController < ApplicationController
     end
   end
 
+
+  def build_location_form
+    @hotel ||= HotelForm.new(Location.new)
+  end
+  
+  def load_location_form
+    @hotel ||= HotelForm.new(Location.find(params[:id]))
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel
@@ -71,6 +81,6 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :description, :starts, :address, :city, :location_coordinates, :phone, :raiting, :locations_id)
+      params.require(:hotel).permit(:name, :description, :starts, :address, :location_coordinates, :phone, :raiting, :country, :state, :city)
     end
 end

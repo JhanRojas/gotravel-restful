@@ -5,14 +5,14 @@ class CreateHotels < ActiveRecord::Migration
       t.string :description
       t.integer :starts
       t.string :address
-      t.string :city
       t.string :location_coordinates
       t.string :phone
       t.string :raiting
-      t.references :locations, index: true
+      t.string :country
+      t.string :state
+      t.string :city
 
       t.timestamps null: false
     end
-    add_foreign_key :hotels, :locations, column: :id
   end
 end

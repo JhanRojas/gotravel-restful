@@ -1,43 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Hotels</h1>
-
-<table>
+<%- model_class = Hotel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Starts</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Location coordinates</th>
-      <th>Phone</th>
-      <th>Raiting</th>
-      <th>Locations</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:starts) %></th>
+      <th><%= model_class.human_attribute_name(:raiting) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:state) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @hotels.each do |hotel| %>
       <tr>
+        <td><%= link_to hotel.id, hotel_path(hotel) %></td>
         <td><%= hotel.name %></td>
-        <td><%= hotel.description %></td>
         <td><%= hotel.starts %></td>
-        <td><%= hotel.address %></td>
-        <td><%= hotel.city %></td>
-        <td><%= hotel.location_coordinates %></td>
-        <td><%= hotel.phone %></td>
         <td><%= hotel.raiting %></td>
-        <td><%= hotel.location.country %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= hotel.country %></td>
+        <td><%= hotel.state %></td>
+        <td><%= hotel.city %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_hotel_path(hotel), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      hotel_path(hotel),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Hotel', new_hotel_path %>

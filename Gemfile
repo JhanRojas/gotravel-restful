@@ -58,3 +58,8 @@ gem 'devise'
 
 # Devise Bootstrap
 gem 'devise-bootstrap-views'
+
+gem "reform", "~> 2.0"
+
+# Country State Select
+gem 'country_state_select', '3.0.2'
