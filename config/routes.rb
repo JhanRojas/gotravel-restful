@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :places
+  resources :flights
   devise_for :users, :controllers => {:sessions => "sessions"}
   
   get 'pages/index'

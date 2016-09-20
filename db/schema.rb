@@ -13,6 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20160919210255) do
 
+  create_table "flights", force: :cascade do |t|
+    t.string   "origen",     limit: 255
+    t.string   "destino",    limit: 255
+    t.date     "partida"
+    t.date     "regreso"
+    t.integer  "adultos",    limit: 4
+    t.integer  "menores",    limit: 4
+    t.float    "precio",     limit: 24
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "hotels", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
