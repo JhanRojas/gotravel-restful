@@ -1,3 +1,8 @@
+
+
+<body>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Restaurants</h1>
@@ -24,14 +29,16 @@
         <td><%= restaurant.websiteurl %></td>
         <td><%= restaurant.logourl %></td>
         <td><%= restaurant.status %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', restaurant %> - </td>
+        <td><%= link_to ' Editar', edit_restaurant_path(restaurant) %> - </td>
+        <td><%= link_to ' Eliminar', restaurant, method: :delete, data: { confirm: '¿está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'Nuevo Restaurant', new_restaurant_path %>
+</body>
