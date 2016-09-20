@@ -1,16 +1,18 @@
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @restaurant, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@restaurant[:name]) %>
+  <%= f.input :description %>
+  <%= error_span(@restaurant[:description]) %>
+  <%= f.input :level %>
+  <%= error_span(@restaurant[:level]) %>
+  <%= f.input :websiteurl %>
+  <%= error_span(@restaurant[:websiteurl]) %>
+  <%= f.input :logourl %>
+  <%= error_span(@restaurant[:logourl]) %>
+  <%= f.input :status %>
+  <%= error_span(@restaurant[:status]) %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :level %>
-    <%= f.input :websiteurl %>
-    <%= f.input :logourl %>
-    <%= f.input :status %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                restaurants_path, :class => 'btn btn-default' %>
 <% end %>

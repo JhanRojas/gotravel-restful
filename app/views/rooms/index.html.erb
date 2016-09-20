@@ -1,4 +1,4 @@
-<%- model_class = Place -%>
+<%- model_class = Room -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
@@ -6,28 +6,30 @@
   <thead>
     <tr>
       <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:number_people) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:hotels_id) %></th>
       <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
-      <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @places.each do |place| %>
+    <% @rooms.each do |room| %>
       <tr>
-        <td><%= link_to place.id, place_path(place) %></td>
-        <td><%= place.name %></td>
-        <td><%= place.description %></td>
-        <td><%= place.type %></td>
-        <td><%= place.price %></td>
-        <td><%=l place.created_at %></td>
+        <td><%= link_to room.id, room_path(room) %></td>
+        <td><%= room.type %></td>
+        <td><%= room.description %></td>
+        <td><%= room.number_people %></td>
+        <td><%= room.price %></td>
+        <td><%= room.hotels_id %></td>
+        <td><%=l room.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_place_path(place), :class => 'btn btn-default btn-xs' %>
+                      edit_room_path(room), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      place_path(place),
+                      room_path(room),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -38,5 +40,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_place_path,
+            new_room_path,
             :class => 'btn btn-primary' %>
