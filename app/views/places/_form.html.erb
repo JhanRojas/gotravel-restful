@@ -1,0 +1,14 @@
+<%= simple_form_for @place, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@place[:name]) %>
+  <%= f.input :description %>
+  <%= error_span(@place[:description]) %>
+  <%= f.input :type %>
+  <%= error_span(@place[:type]) %>
+  <%= f.input :price %>
+  <%= error_span(@place[:price]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                places_path, :class => 'btn btn-default' %>
+<% end %>

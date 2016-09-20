@@ -1,17 +1,46 @@
-<%= simple_form_for(@flight) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@flight) do |f| %>
+  <% if @flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
 
-  <div class="form-inputs">
-    <%= f.input :origen %>
-    <%= f.input :destino %>
-    <%= f.input :partida %>
-    <%= f.input :regreso %>
-    <%= f.input :adultos %>
-    <%= f.input :menores %>
-    <%= f.input :precio %>
+      <ul>
+      <% @flight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :origen %><br>
+    <%= f.text_field :origen %>
+  </div>
+  <div class="field">
+    <%= f.label :destino %><br>
+    <%= f.text_field :destino %>
+  </div>
+<div class="field">
+    <%= f.label :partida %><br>
+    <%= f.date_field :partida %>
+  </div>
+  <div class="field">
+    <%= f.label :regreso %><br>
+    <%= f.date_field :regreso %>
+  </div>
+<div class="field">
+    <%= f.label :adultos %><br>
+    <%= f.number_field :adultos %>
+  </div>
+  <div class="field">
+    <%= f.label :menores %><br>
+    <%= f.number_field :menores %>
+  </div>
+<div class="field">
+    <%= f.label :precio %><br>
+    <%= f.number_field :precio %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>
