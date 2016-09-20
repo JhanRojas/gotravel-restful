@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20160919210255) do
   create_table "locations", force: :cascade do |t|
     t.string   "country",    limit: 255
     t.string   "state",      limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "city",       limit: 255
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
   end
 
   create_table "places", force: :cascade do |t|
