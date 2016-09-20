@@ -1,46 +1,20 @@
-<%= form_for(@flight) do |f| %>
-  <% if @flight.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+<%= simple_form_for @flight, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :origen %>
+  <%= error_span(@flight[:origen]) %>
+  <%= f.input :destino %>
+  <%= error_span(@flight[:destino]) %>
+  <%= f.input :partida %>
+  <%= error_span(@flight[:partida]) %>
+  <%= f.input :regreso %>
+  <%= error_span(@flight[:regreso]) %>
+  <%= f.input :adultos %>
+  <%= error_span(@flight[:adultos]) %>
+  <%= f.input :menores %>
+  <%= error_span(@flight[:menores]) %>
+  <%= f.input :precio %>
+  <%= error_span(@flight[:precio]) %>
 
-      <ul>
-      <% @flight.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :origen %><br>
-    <%= f.text_field :origen %>
-  </div>
-  <div class="field">
-    <%= f.label :destino %><br>
-    <%= f.text_field :destino %>
-  </div>
-<div class="field">
-    <%= f.label :partida %><br>
-    <%= f.date_field :partida %>
-  </div>
-  <div class="field">
-    <%= f.label :regreso %><br>
-    <%= f.date_field :regreso %>
-  </div>
-<div class="field">
-    <%= f.label :adultos %><br>
-    <%= f.number_field :adultos %>
-  </div>
-  <div class="field">
-    <%= f.label :menores %><br>
-    <%= f.number_field :menores %>
-  </div>
-<div class="field">
-    <%= f.label :precio %><br>
-    <%= f.number_field :precio %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                flights_path, :class => 'btn btn-default' %>
 <% end %>

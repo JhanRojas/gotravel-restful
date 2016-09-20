@@ -1,37 +1,29 @@
-<div id="manana">
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @restaurant.description %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @restaurant.level %>
-</p>
-
-<p>
-  <strong>Websiteurl:</strong>
-  <%= @restaurant.websiteurl %>
-</p>
-
-<p>
-  <strong>Logourl:</strong>
-  <%= @restaurant.logourl %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @restaurant.status %>
-</p>
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%- model_class = Restaurant -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @restaurant.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @restaurant.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:level) %>:</strong></dt>
+  <dd><%= @restaurant.level %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:websiteurl) %>:</strong></dt>
+  <dd><%= @restaurant.websiteurl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:logourl) %>:</strong></dt>
+  <dd><%= @restaurant.logourl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @restaurant.status %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              restaurants_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_restaurant_path(@restaurant), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              restaurant_path(@restaurant),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

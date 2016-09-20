@@ -1,59 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Hotel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @hotel.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @hotel.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:starts) %>:</strong></dt>
+  <dd><%= @hotel.starts %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @hotel.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:location_coordinates) %>:</strong></dt>
+  <dd><%= @hotel.location_coordinates %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @hotel.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:raiting) %>:</strong></dt>
+  <dd><%= @hotel.raiting %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @hotel.country %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @hotel.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @hotel.city %></dd>
+</dl>
 
-<p>
-  <strong>Description:</strong>
-  <%= @hotel.description %>
-</p>
-
-<p>
-  <strong>Starts:</strong>
-  <%= @hotel.starts %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @hotel.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @hotel.city %>
-</p>
-
-<p>
-  <strong>Location coordinates:</strong>
-  <%= @hotel.location_coordinates %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @hotel.phone %>
-</p>
-
-<p>
-  <strong>Raiting:</strong>
-  <%= @hotel.raiting %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @hotel.country %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @hotel.state %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @hotel.city %>
-</p>
-
-<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
-<%= link_to 'Back', hotels_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              hotels_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_hotel_path(@hotel), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              hotel_path(@hotel),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
