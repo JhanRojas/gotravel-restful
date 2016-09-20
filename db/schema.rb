@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20160919210255) do
   create_table "locations", force: :cascade do |t|
     t.string   "country",    limit: 255
     t.string   "state",      limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "city",       limit: 255
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
   end
 
   create_table "places", force: :cascade do |t|
@@ -98,6 +98,5 @@ ActiveRecord::Schema.define(version: 20160919210255) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "hotels", "locations", column: "id"
   add_foreign_key "rooms", "hotels", column: "id"
 end
