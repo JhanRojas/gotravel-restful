@@ -5,18 +5,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:starts) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:location_coordinates) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:raiting) %></th>
       <th><%= model_class.human_attribute_name(:country) %></th>
       <th><%= model_class.human_attribute_name(:state) %></th>
       <th><%= model_class.human_attribute_name(:city) %></th>
-     <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
     </tr>
   </thead>
@@ -25,16 +21,12 @@
       <tr>
         <td><%= link_to hotel.id, hotel_path(hotel) %></td>
         <td><%= hotel.name %></td>
-        <td><%= hotel.description %></td>
         <td><%= hotel.starts %></td>
-        <td><%= hotel.address %></td>
-        <td><%= hotel.location_coordinates %></td>
         <td><%= hotel.phone %></td>
         <td><%= hotel.raiting %></td>
         <td><%= hotel.country %></td>
         <td><%= hotel.state %></td>
         <td><%= hotel.city %></td>
-        <td><%=l hotel.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_hotel_path(hotel), :class => 'btn btn-default btn-xs' %>
