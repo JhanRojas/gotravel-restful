@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919210255) do
+ActiveRecord::Schema.define(version: 20160921161600) do
 
   create_table "flights", force: :cascade do |t|
     t.string   "origen",     limit: 255
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160919210255) do
   create_table "places", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
-    t.string   "type",        limit: 255
+    t.text     "activity",    limit: 65535
     t.decimal  "price",                     precision: 10
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false

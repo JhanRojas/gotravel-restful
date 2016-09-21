@@ -3,7 +3,7 @@ class CreatePlaces < ActiveRecord::Migration
     create_table :places do |t|
       t.string :name
       t.text :description
-      t.string :type
+      t.text :activity
       t.decimal :price
 
       t.timestamps null: false

@@ -3,11 +3,11 @@
 one:
   name: MyString
   description: MyText
-  type: 
+  activity: MyText
   price: 9.99
 
 two:
   name: MyString
   description: MyText
-  type: 
+  activity: MyText
   price: 9.99

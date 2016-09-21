@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  
   layout "appadmin"
   # GET /places
   # GET /places.json
@@ -69,6 +70,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :description, :type, :price)
+      params.require(:place).permit(:name, :description, :activity, :price)
     end
 end
