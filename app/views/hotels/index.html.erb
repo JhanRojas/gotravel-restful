@@ -28,6 +28,10 @@
         <td><%= hotel.state %></td>
         <td><%= hotel.city %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.rooms")),
+                      rooms_path, :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      hotel, :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_hotel_path(hotel), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
