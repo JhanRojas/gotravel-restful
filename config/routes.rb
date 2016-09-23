@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   
   resources :places
   resources :hotels
-  resources :locations
   resources :restaurants
   resources :hotels
   resources :flights
@@ -24,8 +23,6 @@ Rails.application.routes.draw do
 
   get 'pages/sign_in'
 
-  resources :hotels
-  
   root 'pages#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
