@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :rooms
-  resources :rooms
   resources :places
-  resources :hotels
+  
+  resources :hotels do
+    get 'rooms'
+  end
+  
   resources :rooms
   resources :restaurants
   resources :hotels

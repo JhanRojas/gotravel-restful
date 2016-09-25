@@ -16,10 +16,10 @@ class HotelsController < ApplicationController
 
   # GET /hotels/1/rooms
   # GET /hotels/1/rooms.json
-  #def rooms
-    #@rooms = Room.where(hotel_id: param[hotel_id])
-  #  render "rooms/index"
-  #end
+  def rooms
+    @rooms = Room.where(hotel_id: params[:hotel_id])
+    render "rooms/index"
+  end
 
   # GET /hotels/new
   def new
