@@ -4,10 +4,16 @@
 </div>
 
 <dl class="dl-horizontal">
+   <dt><strong><%= model_class.human_attribute_name(:origin_country) %>:</strong></dt>
+  <dd><%= @flight.origin_country %></dd>
+  
   <dt><strong><%= model_class.human_attribute_name(:origin_state) %>:</strong></dt>
   <dd><%= @flight.origin_state %></dd>
   <dt><strong><%= model_class.human_attribute_name(:origin_city) %>:</strong></dt>
   <dd><%= @flight.origin_city %></dd>
+  
+  <dt><strong><%= model_class.human_attribute_name(:destination_country) %>:</strong></dt>
+  <dd><%= @flight.destination_country %></dd>
   <dt><strong><%= model_class.human_attribute_name(:destination_state) %>:</strong></dt>
   <dd><%= @flight.destination_state %></dd>
   <dt><strong><%= model_class.human_attribute_name(:destination_city) %>:</strong></dt>
@@ -23,7 +29,7 @@
   <dt><strong><%= model_class.human_attribute_name(:capacity) %>:</strong></dt>
   <dd><%= @flight.capacity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:airline_id) %>:</strong></dt>
-  <dd><%= @flight.airline_id %></dd>
+  <dd><%= @flight.airline.name %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

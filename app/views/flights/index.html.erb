@@ -6,8 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:origin_country) %></th>
       <th><%= model_class.human_attribute_name(:origin_state) %></th>
       <th><%= model_class.human_attribute_name(:origin_city) %></th>
+      <th><%= model_class.human_attribute_name(:destination_country) %></th>
       <th><%= model_class.human_attribute_name(:destination_state) %></th>
       <th><%= model_class.human_attribute_name(:destination_city) %></th>
       <th><%= model_class.human_attribute_name(:departure) %></th>
@@ -24,8 +26,10 @@
     <% @flights.each do |flight| %>
       <tr>
         <td><%= link_to flight.id, flight_path(flight) %></td>
+        <td><%= flight.origin_country %></td>
         <td><%= flight.origin_state %></td>
         <td><%= flight.origin_city %></td>
+        <td><%= flight.destination_country %></td>
         <td><%= flight.destination_state %></td>
         <td><%= flight.destination_city %></td>
         <td><%= flight.departure %></td>
@@ -33,7 +37,7 @@
         <td><%= flight.adult_price %></td>
         <td><%= flight.minor_price %></td>
         <td><%= flight.capacity %></td>
-        <td><%= flight.airline_id %></td>
+        <td><%= flight.airline.name %></td>
         <td><%=l flight.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
