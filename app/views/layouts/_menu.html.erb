@@ -8,11 +8,22 @@
         <i class="fa fa-briefcase fa-fw"></i> Tour Package
     <% end %>
 </li>
+
+        
+
 <li>
-    <%= link_to "/flights" do %>
-        <i class="fa fa-plane fa-fw"></i> Flight
+    <%= link_to "/airlines" do %>
+        <i class="fa fa-home fa-fw"></i> Airlines
     <% end %>
+    <ul class="nav nav-second-level">
+        <li>
+            <%= link_to "/flights" do %>
+                <i class="fa fa-th fa-fw"></i> Flights
+            <% end %>
+        </li>
+    </ul>
 </li>
+
 <li>
     <%= link_to "/hotels" do %>
         <i class="fa fa-home fa-fw"></i> Hotel
@@ -25,6 +36,7 @@
         </li>
     </ul>
 </li>
+
 <li>
     <%= link_to "/restaurants" do %>
         <i class="fa fa-cutlery fa-fw"></i> Restaurant

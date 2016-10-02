@@ -11,19 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160926194021) do
+=======
+ActiveRecord::Schema.define(version: 20161001223828) do
+
+  create_table "airlines", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+>>>>>>> 952fc4b019539d6d7c1bd2839a762345f3a8d83e
 
   create_table "flights", force: :cascade do |t|
-    t.string   "origen",     limit: 255
-    t.string   "destino",    limit: 255
-    t.date     "partida"
-    t.date     "regreso"
-    t.integer  "adultos",    limit: 4
-    t.integer  "menores",    limit: 4
-    t.float    "precio",     limit: 24
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "origin_country",      limit: 255
+    t.string   "origin_state",        limit: 255
+    t.string   "origin_city",         limit: 255
+    t.string   "destination_country", limit: 255
+    t.string   "destination_state",   limit: 255
+    t.string   "destination_city",    limit: 255
+    t.date     "departure"
+    t.date     "returning"
+    t.integer  "adults",              limit: 4
+    t.integer  "minor",               limit: 4
+    t.decimal  "price",                           precision: 10
+    t.integer  "airline_id",          limit: 4
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
+
+  add_index "flights", ["airline_id"], name: "index_flights_on_airline_id", using: :btree
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name",                 limit: 255
@@ -90,5 +108,6 @@ ActiveRecord::Schema.define(version: 20160926194021) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "flights", "airlines"
   add_foreign_key "rooms", "hotels"
 end

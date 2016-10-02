@@ -1,19 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  origen: MyString
-  destino: MyString
-  partida: 2016-09-17
-  regreso: 2016-09-17
-  adultos: 1
-  menores: 1
-  precio: 1.5
+  origin_country: MyString
+  origin_state: MyString
+  origin_city: MyString
+  destination_country: MyString
+  destination_state: MyString
+  destination_city: MyString
+  departure: 2016-10-01
+  returning: 2016-10-01
+  adults: 1
+  minor: 1
+  price: 9.99
+  airline_id: 
 
 two:
-  origen: MyString
-  destino: MyString
-  partida: 2016-09-17
-  regreso: 2016-09-17
-  adultos: 1
-  menores: 1
-  precio: 1.5
+  origin_country: MyString
+  origin_state: MyString
+  origin_city: MyString
+  destination_country: MyString
+  destination_state: MyString
+  destination_city: MyString
+  departure: 2016-10-01
+  returning: 2016-10-01
+  adults: 1
+  minor: 1
+  price: 9.99
+  airline_id: 
