@@ -1,6 +1,6 @@
 class TourPackagesController < ApplicationController
   before_action :set_tour_package, only: [:show, :edit, :update, :destroy]
-
+  layout "appadmin"
   # GET /tour_packages
   # GET /tour_packages.json
   def index
