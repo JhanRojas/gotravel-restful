@@ -1,64 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Flight -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Origin country:</strong>
-  <%= @flight.origin_country %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:origin_state) %>:</strong></dt>
+  <dd><%= @flight.origin_state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:origin_city) %>:</strong></dt>
+  <dd><%= @flight.origin_city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:destination_state) %>:</strong></dt>
+  <dd><%= @flight.destination_state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:destination_city) %>:</strong></dt>
+  <dd><%= @flight.destination_city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:departure) %>:</strong></dt>
+  <dd><%= @flight.departure %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:returning) %>:</strong></dt>
+  <dd><%= @flight.returning %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:adult_price) %>:</strong></dt>
+  <dd><%= @flight.adult_price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:minor_price) %>:</strong></dt>
+  <dd><%= @flight.minor_price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:capacity) %>:</strong></dt>
+  <dd><%= @flight.capacity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:airline_id) %>:</strong></dt>
+  <dd><%= @flight.airline_id %></dd>
+</dl>
 
-<p>
-  <strong>Origin state:</strong>
-  <%= @flight.origin_state %>
-</p>
-
-<p>
-  <strong>Origin city:</strong>
-  <%= @flight.origin_city %>
-</p>
-
-<p>
-  <strong>Destination country:</strong>
-  <%= @flight.destination_country %>
-</p>
-
-<p>
-  <strong>Destination state:</strong>
-  <%= @flight.destination_state %>
-</p>
-
-<p>
-  <strong>Destination city:</strong>
-  <%= @flight.destination_city %>
-</p>
-
-<p>
-  <strong>Departure:</strong>
-  <%= @flight.departure %>
-</p>
-
-<p>
-  <strong>Returning:</strong>
-  <%= @flight.returning %>
-</p>
-
-<p>
-  <strong>Adults:</strong>
-  <%= @flight.adults %>
-</p>
-
-<p>
-  <strong>Minor:</strong>
-  <%= @flight.minor %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @flight.price %>
-</p>
-
-<p>
-  <strong>Airline:</strong>
-  <%= @flight.airline.name %>
-</p>
-
-<%= link_to 'Edit', edit_flight_path(@flight) %> |
-<%= link_to 'Back', flights_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              flights_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_flight_path(@flight), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              flight_path(@flight),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

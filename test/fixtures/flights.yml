@@ -7,11 +7,11 @@ one:
   destination_country: MyString
   destination_state: MyString
   destination_city: MyString
-  departure: 2016-10-01
-  returning: 2016-10-01
-  adults: 1
-  minor: 1
-  price: 9.99
+  departure: 2016-10-02
+  returning: 2016-10-02
+  adult_price: 9.99
+  minor_price: 9.99
+  capacity: 1
   airline_id: 
 
 two:
@@ -21,9 +21,9 @@ two:
   destination_country: MyString
   destination_state: MyString
   destination_city: MyString
-  departure: 2016-10-01
-  returning: 2016-10-01
-  adults: 1
-  minor: 1
-  price: 9.99
+  departure: 2016-10-02
+  returning: 2016-10-02
+  adult_price: 9.99
+  minor_price: 9.99
+  capacity: 1
   airline_id: 

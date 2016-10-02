@@ -1,6 +1,6 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
-  layout "appadmin"
+ layout "appadmin"
   # GET /flights
   # GET /flights.json
   def index
@@ -69,6 +69,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.require(:flight).permit(:origin_country, :origin_state, :origin_city, :destination_country, :destination_state, :destination_city, :departure, :returning, :adults, :minor, :price, :airline_id)
+      params.require(:flight).permit(:origin_country, :origin_state, :origin_city, :destination_country, :destination_state, :destination_city, :departure, :returning, :adult_price, :minor_price, :capacity, :airline_id)
     end
 end

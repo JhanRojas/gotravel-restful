@@ -1,49 +1,54 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Flights</h1>
-
-<table>
+<%- model_class = Flight -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Origin country</th>
-      <th>Origin state</th>
-      <th>Origin city</th>
-      <th>Destination country</th>
-      <th>Destination state</th>
-      <th>Destination city</th>
-      <th>Departure</th>
-      <th>Returning</th>
-      <th>Adults</th>
-      <th>Minor</th>
-      <th>Price</th>
-      <th>Airline</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:origin_state) %></th>
+      <th><%= model_class.human_attribute_name(:origin_city) %></th>
+      <th><%= model_class.human_attribute_name(:destination_state) %></th>
+      <th><%= model_class.human_attribute_name(:destination_city) %></th>
+      <th><%= model_class.human_attribute_name(:departure) %></th>
+      <th><%= model_class.human_attribute_name(:returning) %></th>
+      <th><%= model_class.human_attribute_name(:adult_price) %></th>
+      <th><%= model_class.human_attribute_name(:minor_price) %></th>
+      <th><%= model_class.human_attribute_name(:capacity) %></th>
+      <th><%= model_class.human_attribute_name(:airline_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
-        <td><%= flight.origin_country %></td>
+        <td><%= link_to flight.id, flight_path(flight) %></td>
         <td><%= flight.origin_state %></td>
         <td><%= flight.origin_city %></td>
-        <td><%= flight.destination_country %></td>
         <td><%= flight.destination_state %></td>
         <td><%= flight.destination_city %></td>
         <td><%= flight.departure %></td>
         <td><%= flight.returning %></td>
-        <td><%= flight.adults %></td>
-        <td><%= flight.minor %></td>
-        <td><%= flight.price %></td>
-        <td><%= flight.airline.name %></td>
-        <td><%= link_to 'Show', flight %></td>
-        <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
-        <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= flight.adult_price %></td>
+        <td><%= flight.minor_price %></td>
+        <td><%= flight.capacity %></td>
+        <td><%= flight.airline_id %></td>
+        <td><%=l flight.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_flight_path(flight), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      flight_path(flight),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Flight', new_flight_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_flight_path,
+            :class => 'btn btn-primary' %>
