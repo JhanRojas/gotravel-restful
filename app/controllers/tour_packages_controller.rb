@@ -1,7 +1,6 @@
 class TourPackagesController < ApplicationController
   before_action :set_tour_package, only: [:show, :edit, :update, :destroy]
 
-  layout "appadmin"
   # GET /tour_packages
   # GET /tour_packages.json
   def index
@@ -70,6 +69,6 @@ class TourPackagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_package_params
-      params.require(:tour_package).permit(:origin, :destination, :departure, :returnning, :hotel, :restaurant, :place)
+      params.require(:tour_package).permit(:flight_id, :hotel_id, :restaurant_id, :place_id)
     end
 end

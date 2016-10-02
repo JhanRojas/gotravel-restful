@@ -18,7 +18,7 @@ class TourPackagesControllerTest < ActionController::TestCase
 
   test "should create tour_package" do
     assert_difference('TourPackage.count') do
-      post :create, tour_package: { departure: @tour_package.departure, destination: @tour_package.destination, hotel: @tour_package.hotel, origin: @tour_package.origin, place: @tour_package.place, restaurant: @tour_package.restaurant, returnning: @tour_package.returnning }
+      post :create, tour_package: { flight_id: @tour_package.flight_id, hotel_id: @tour_package.hotel_id, place_id: @tour_package.place_id, restaurant_id: @tour_package.restaurant_id }
     end
 
     assert_redirected_to tour_package_path(assigns(:tour_package))
@@ -35,7 +35,7 @@ class TourPackagesControllerTest < ActionController::TestCase
   end
 
   test "should update tour_package" do
-    patch :update, id: @tour_package, tour_package: { departure: @tour_package.departure, destination: @tour_package.destination, hotel: @tour_package.hotel, origin: @tour_package.origin, place: @tour_package.place, restaurant: @tour_package.restaurant, returnning: @tour_package.returnning }
+    patch :update, id: @tour_package, tour_package: { flight_id: @tour_package.flight_id, hotel_id: @tour_package.hotel_id, place_id: @tour_package.place_id, restaurant_id: @tour_package.restaurant_id }
     assert_redirected_to tour_package_path(assigns(:tour_package))
   end
 

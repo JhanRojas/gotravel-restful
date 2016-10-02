@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002050205) do
+ActiveRecord::Schema.define(version: 20161002072035) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -87,16 +87,18 @@ ActiveRecord::Schema.define(version: 20161002050205) do
   add_index "rooms", ["hotel_id"], name: "index_rooms_on_hotel_id", using: :btree
 
   create_table "tour_packages", force: :cascade do |t|
-    t.string   "origin",      limit: 255
-    t.string   "destination", limit: 255
-    t.date     "departure"
-    t.date     "returnning"
-    t.string   "hotel",       limit: 255
-    t.string   "restaurant",  limit: 255
-    t.string   "place",       limit: 255
+    t.integer  "flight_id",     limit: 4
+    t.integer  "hotel_id",      limit: 4
+    t.integer  "restaurant_id", limit: 4
+    t.integer  "place_id",      limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  add_index "tour_packages", ["flight_id"], name: "index_tour_packages_on_flight_id", using: :btree
+  add_index "tour_packages", ["hotel_id"], name: "index_tour_packages_on_hotel_id", using: :btree
+  add_index "tour_packages", ["place_id"], name: "index_tour_packages_on_place_id", using: :btree
+  add_index "tour_packages", ["restaurant_id"], name: "index_tour_packages_on_restaurant_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -118,4 +120,8 @@ ActiveRecord::Schema.define(version: 20161002050205) do
 
   add_foreign_key "flights", "airlines"
   add_foreign_key "rooms", "hotels"
+  add_foreign_key "tour_packages", "flights"
+  add_foreign_key "tour_packages", "hotels"
+  add_foreign_key "tour_packages", "places"
+  add_foreign_key "tour_packages", "restaurants"
 end
