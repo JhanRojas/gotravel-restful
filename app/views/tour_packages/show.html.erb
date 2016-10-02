@@ -1,23 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Flight:</strong>
-  <%= @tour_package.flight %>
+  <strong>Origin:</strong>
+  <%= @tour_package.flight.origin_country %>
+  <%= @tour_package.flight.origin_state %>
+  <%= @tour_package.flight.origin_city %>
+  </p>
+<p>
+  <strong>Destination:</strong>
+  <%= @tour_package.flight.destination_country %>
+  <%= @tour_package.flight.destination_state %>
+  <%= @tour_package.flight.destination_city %>
+  </p>
+<p>
+  <strong>Departure:</strong>
+  <%= @tour_package.flight.departure %>
+  </p>
+<p>
+  <strong>Returning:</strong>
+  <%= @tour_package.flight.returning %>
 </p>
 
 <p>
   <strong>Hotel:</strong>
-  <%= @tour_package.hotel %>
+  <%= @tour_package.hotel.name %>
 </p>
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @tour_package.restaurant %>
+  <%= @tour_package.restaurant.name %>
 </p>
 
 <p>
   <strong>Place:</strong>
-  <%= @tour_package.place %>
+  <%= @tour_package.place.name %>
 </p>
 
 <%= link_to 'Edit', edit_tour_package_path(@tour_package) %> |

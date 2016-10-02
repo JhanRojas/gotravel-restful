@@ -6,7 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:Flight) %></th>
+      <th><%= model_class.human_attribute_name(:origin ) %></th>
+      <th><%= model_class.human_attribute_name(:destination ) %></th>
+      <th><%= model_class.human_attribute_name(:departure ) %></th>
+      <th><%= model_class.human_attribute_name(:returning ) %></th>
       <th><%= model_class.human_attribute_name(:Hotel) %></th>
       <th><%= model_class.human_attribute_name(:Restaurant) %></th>
       <th><%= model_class.human_attribute_name(:Place) %></th>
@@ -17,20 +20,24 @@
   <tbody>
     <% @tour_packages.each do |tour_package| %>
       <tr>
-        <td><%= link_to tour_package.id, tour_package_path(hotel) %></td>
-        <td><%= tour_package.flight %></td>
-        <td><%= tour_package.hotel %></td>
-        <td><%= tour_package.restaurant %></td>
-        <td><%= tour_package.place %></td>
+        <td><%= link_to tour_package.id, tour_package_path(tour_package) %></td>
+        <td><%= tour_package.flight.origin_country %>-<%= tour_package.flight.origin_state %>-<%= tour_package.flight.origin_city %></td>
+        <td><%= tour_package.flight.destination_country %>-<%= tour_package.flight.destination_state %>-<%= tour_package.flight.destination_city %></td>
+       
+        <td><%= tour_package.flight.departure %></td>
+        <td><%= tour_package.flight.returning %></td>
+        <td><%= tour_package.hotel.name %></td>
+        <td><%= tour_package.restaurant.name %></td>
+        <td><%= tour_package.place.name %></td>
     
         <td>
          
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      hotel, :class => 'btn btn-default btn-xs' %>
+                      tour_package, :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_hotel_path(hotel), :class => 'btn btn-default btn-xs' %>
+                      edit_tour_package_path(tour_package), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      hotel_path(hotel),
+                      tour_package_path(tour_package),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>

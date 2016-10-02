@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20161002083103) do
     t.string   "origin_city",         limit: 255
     t.string   "destination_country", limit: 255
     t.string   "destination_state",   limit: 255
-    t.string   "destination_city",    limit: 255
     t.date     "departure"
     t.date     "returning"
     t.decimal  "adult_price",                     precision: 10
@@ -70,7 +69,7 @@ ActiveRecord::Schema.define(version: 20161002083103) do
     t.text     "websiteurl",  limit: 65535
     t.text     "logourl",     limit: 65535
     t.integer  "status",      limit: 4
-    t.integer  "service_restaurants",     limit: 4
+    t.integer  "service",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -128,7 +127,6 @@ ActiveRecord::Schema.define(version: 20161002083103) do
 
   add_foreign_key "flights", "airlines"
   add_foreign_key "rooms", "hotels"
-  add_foreign_key "service_restaurants", "restaurants"
   add_foreign_key "tour_packages", "flights"
   add_foreign_key "tour_packages", "hotels"
   add_foreign_key "tour_packages", "places"
