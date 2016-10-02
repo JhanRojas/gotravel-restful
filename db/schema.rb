@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20161002072035) do
     t.text     "websiteurl",  limit: 65535
     t.text     "logourl",     limit: 65535
     t.integer  "status",      limit: 4
+    t.integer  "service",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
