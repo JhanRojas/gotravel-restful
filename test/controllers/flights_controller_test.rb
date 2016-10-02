@@ -18,7 +18,7 @@ class FlightsControllerTest < ActionController::TestCase
 
   test "should create flight" do
     assert_difference('Flight.count') do
-      post :create, flight: { adultos: @flight.adultos, destino: @flight.destino, menores: @flight.menores, origen: @flight.origen, partida: @flight.partida, precio: @flight.precio, regreso: @flight.regreso }
+      post :create, flight: { adults: @flight.adults, airline_id: @flight.airline_id, departure: @flight.departure, destination_city: @flight.destination_city, destination_country: @flight.destination_country, destination_state: @flight.destination_state, minor: @flight.minor, origin_city: @flight.origin_city, origin_country: @flight.origin_country, origin_state: @flight.origin_state, price: @flight.price, returning: @flight.returning }
     end
 
     assert_redirected_to flight_path(assigns(:flight))
@@ -35,7 +35,7 @@ class FlightsControllerTest < ActionController::TestCase
   end
 
   test "should update flight" do
-    patch :update, id: @flight, flight: { adultos: @flight.adultos, destino: @flight.destino, menores: @flight.menores, origen: @flight.origen, partida: @flight.partida, precio: @flight.precio, regreso: @flight.regreso }
+    patch :update, id: @flight, flight: { adults: @flight.adults, airline_id: @flight.airline_id, departure: @flight.departure, destination_city: @flight.destination_city, destination_country: @flight.destination_country, destination_state: @flight.destination_state, minor: @flight.minor, origin_city: @flight.origin_city, origin_country: @flight.origin_country, origin_state: @flight.origin_state, price: @flight.price, returning: @flight.returning }
     assert_redirected_to flight_path(assigns(:flight))
   end
 

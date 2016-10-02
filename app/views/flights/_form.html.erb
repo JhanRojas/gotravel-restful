@@ -1,20 +1,27 @@
-<%= simple_form_for @flight, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :origen %>
-  <%= error_span(@flight[:origen]) %>
-  <%= f.input :destino %>
-  <%= error_span(@flight[:destino]) %>
-  <%= f.input :partida %>
-  <%= error_span(@flight[:partida]) %>
-  <%= f.input :regreso %>
-  <%= error_span(@flight[:regreso]) %>
-  <%= f.input :adultos %>
-  <%= error_span(@flight[:adultos]) %>
-  <%= f.input :menores %>
-  <%= error_span(@flight[:menores]) %>
-  <%= f.input :precio %>
-  <%= error_span(@flight[:precio]) %>
+<%= simple_form_for(@flight) do |f| %>
+  <%= f.error_notification %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                flights_path, :class => 'btn btn-default' %>
+  <div class="form-inputs">
+  <%= f.input :origin_country, label: "Origin Country", collection: CountryStateSelect.countries_collection %>
+  <%= f.input :origin_state, CountryStateSelect.state_options(label: "Origin State ", form: f, field_names: {  :country => :origin_country, :origin_state => :flight_origin_state } ) %>
+  <%= f.input :origin_city, CountryStateSelect.city_options(label: "Origin City ", form: f, field_names: {  :state => :origin_state, :origin_city => :flight_origin_city } ) %>
+
+  
+  <%= f.input :destination_country, label: "Destination Country", collection: CountryStateSelect.countries_collection %>  
+  <%= f.input :destination_state, CountryStateSelect.state_options(label: "Destination State ", form: f, field_names: {  :country => :destination_country, :destination_state => :flight_destination_state } ) %> 
+  <%= f.input :destination_city, CountryStateSelect.city_options(label: "Destination City ", form: f, field_names: {  :state => :destination_state, :destination_city => :flight_destination_city } ) %>
+    
+ 
+    
+    <%= f.input :departure %>
+    <%= f.input :returning %>
+    <%= f.input :adults %>
+    <%= f.input :minor %>
+    <%= f.input :price %>
+    <%= f.association :airline %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
 <% end %>

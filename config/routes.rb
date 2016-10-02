@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   
+  resources :flights
+  resources :flights
+  resources :airlines
+  resources :flights
+  resources :flights
+  resources :airlines
+  resources :airlines
+  resources :airlines
+  resources :airlines
   resources :places
   
   resources :hotels do
@@ -9,7 +18,6 @@ Rails.application.routes.draw do
   resources :rooms
   resources :restaurants
   resources :hotels
-  resources :flights
   devise_for :users, :controllers => {:sessions => "sessions"}
   
   get 'pages/index'
