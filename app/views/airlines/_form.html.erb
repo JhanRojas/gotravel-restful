@@ -1,12 +1,10 @@
-<%= simple_form_for(@airline) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @airline, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@airline[:name]) %>
+  <%= f.input :description %>
+  <%= error_span(@airline[:description]) %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                airlines_path, :class => 'btn btn-default' %>
 <% end %>

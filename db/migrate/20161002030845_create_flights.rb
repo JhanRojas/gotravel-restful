@@ -9,9 +9,9 @@ class CreateFlights < ActiveRecord::Migration
       t.string :destination_city
       t.date :departure
       t.date :returning
-      t.integer :adults
-      t.integer :minor
-      t.decimal :price
+      t.decimal :adult_price
+      t.decimal :minor_price
+      t.integer :capacity
       t.references :airline, index: true, foreign_key: true
 
       t.timestamps null: false
