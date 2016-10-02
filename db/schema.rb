@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002030845) do
+ActiveRecord::Schema.define(version: 20161002050205) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
