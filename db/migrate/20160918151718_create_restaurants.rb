@@ -7,6 +7,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.text :websiteurl
       t.text :logourl
       t.integer :status
+      t.integer :service
 
       t.timestamps null: false
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002072035) do
+ActiveRecord::Schema.define(version: 20161002083103) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20161002072035) do
     t.text     "websiteurl",  limit: 65535
     t.text     "logourl",     limit: 65535
     t.integer  "status",      limit: 4
+    t.integer  "service_restaurants",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -85,6 +86,13 @@ ActiveRecord::Schema.define(version: 20161002072035) do
   end
 
   add_index "rooms", ["hotel_id"], name: "index_rooms_on_hotel_id", using: :btree
+
+  create_table "service_restaurants", force: :cascade do |t|
+    t.string   "nombre",      limit: 255
+    t.text     "descripcion", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "tour_packages", force: :cascade do |t|
     t.integer  "flight_id",     limit: 4
@@ -120,6 +128,7 @@ ActiveRecord::Schema.define(version: 20161002072035) do
 
   add_foreign_key "flights", "airlines"
   add_foreign_key "rooms", "hotels"
+  add_foreign_key "service_restaurants", "restaurants"
   add_foreign_key "tour_packages", "flights"
   add_foreign_key "tour_packages", "hotels"
   add_foreign_key "tour_packages", "places"

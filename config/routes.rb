@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  resources :service_restaurants
   resources :flights
   resources :airlines
   resources :places

@@ -1,8 +1,6 @@
 class Restaurant < ActiveRecord::Base
+    has_many :service_restaurants
 end
 
-class Restaurant < ActiveRecord::Base
-  belongs_to :places
-end
 
 

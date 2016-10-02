@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   
+  
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants
