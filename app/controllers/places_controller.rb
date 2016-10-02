@@ -1,7 +1,11 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
-  
+  protect_from_forgery with: :exception
+  before_action :authenticate_user!
   layout "appadmin"
+  
+  
+  before_action :set_place, only: [:show, :edit, :update, :destroy]
+
   # GET /places
   # GET /places.json
   def index

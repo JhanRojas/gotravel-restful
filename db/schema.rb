@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923062059) do
+ActiveRecord::Schema.define(version: 20160926194021) do
 
   create_table "flights", force: :cascade do |t|
     t.string   "origen",     limit: 255
