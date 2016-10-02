@@ -1,0 +1,48 @@
+<%- model_class = TourPackage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:origin) %></th>
+      <th><%= model_class.human_attribute_name(:destination) %></th>
+      <th><%= model_class.human_attribute_name(:departure) %></th>
+      <th><%= model_class.human_attribute_name(:returnning) %></th>
+      <th><%= model_class.human_attribute_name(:hotel) %></th>
+      <th><%= model_class.human_attribute_name(:restaurant) %></th>
+      <th><%= model_class.human_attribute_name(:place) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tour_packages.each do |tour_package| %>
+      <tr>
+        <td><%= link_to tour_package.id, tour_package_path(tour_package) %></td>
+        <td><%= tour_package.origin %></td>
+        <td><%= tour_package.destination %></td>
+        <td><%= tour_package.departure %></td>
+        <td><%= tour_package.returnning %></td>
+        <td><%= tour_package.hotel %></td>
+        <td><%= tour_package.restaurant %></td>
+        <td><%= tour_package.place %></td>
+        <td><%=l tour_package.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_tour_package_path(tour_package), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      tour_package_path(tour_package),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_tour_package_path,
+            :class => 'btn btn-primary' %>

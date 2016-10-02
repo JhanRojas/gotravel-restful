@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   resources :rooms
   resources :restaurants
+  resources :tour_packages
   devise_for :users, :controllers => {:sessions => "sessions"}
   
   get 'pages/index'

@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160926194021) do
-=======
-ActiveRecord::Schema.define(version: 20161001223828) do
+ActiveRecord::Schema.define(version: 20161002050205) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -22,7 +19,6 @@ ActiveRecord::Schema.define(version: 20161001223828) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
->>>>>>> 952fc4b019539d6d7c1bd2839a762345f3a8d83e
 
   create_table "flights", force: :cascade do |t|
     t.string   "origin_country",      limit: 255
@@ -89,6 +85,18 @@ ActiveRecord::Schema.define(version: 20161001223828) do
   end
 
   add_index "rooms", ["hotel_id"], name: "index_rooms_on_hotel_id", using: :btree
+
+  create_table "tour_packages", force: :cascade do |t|
+    t.string   "origin",      limit: 255
+    t.string   "destination", limit: 255
+    t.date     "departure"
+    t.date     "returnning"
+    t.string   "hotel",       limit: 255
+    t.string   "restaurant",  limit: 255
+    t.string   "place",       limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

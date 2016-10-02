@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origin: MyString
+  destination: MyString
+  departure: 2016-10-02
+  returnning: 2016-10-02
+  hotel: MyString
+  restaurant: MyString
+  place: MyString
+
+two:
+  origin: MyString
+  destination: MyString
+  departure: 2016-10-02
+  returnning: 2016-10-02
+  hotel: MyString
+  restaurant: MyString
+  place: MyString

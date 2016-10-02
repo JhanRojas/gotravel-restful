@@ -1,0 +1,20 @@
+<%= simple_form_for @tour_package, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :origin %>
+  <%= error_span(@tour_package[:origin]) %>
+  <%= f.input :destination %>
+  <%= error_span(@tour_package[:destination]) %>
+  <%= f.input :departure %>
+  <%= error_span(@tour_package[:departure]) %>
+  <%= f.input :returnning %>
+  <%= error_span(@tour_package[:returnning]) %>
+  <%= f.input :hotel %>
+  <%= error_span(@tour_package[:hotel]) %>
+  <%= f.input :restaurant %>
+  <%= error_span(@tour_package[:restaurant]) %>
+  <%= f.input :place %>
+  <%= error_span(@tour_package[:place]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tour_packages_path, :class => 'btn btn-default' %>
+<% end %>
