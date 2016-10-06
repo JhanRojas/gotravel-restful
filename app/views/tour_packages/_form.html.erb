@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :flight %>
+    <%= f.association :flight, :label_method => lambda { |r| "#{r.origin_country}-#{r.origin_state}-#{r.origin_city} to #{r.destination_country}-#{r.destination_state}-#{r.destination_city} " } %>
     <%= f.association :hotel %>
     <%= f.association :restaurant %>
     <%= f.association :place %>
