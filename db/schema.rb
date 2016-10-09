@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20161009045614) do
     t.string   "origin_city",         limit: 255
     t.string   "destination_country", limit: 255
     t.string   "destination_state",   limit: 255
-    t.string   "destination_city",   limit: 255
     t.date     "departure"
     t.date     "returning"
     t.decimal  "adult_price",                     precision: 10
