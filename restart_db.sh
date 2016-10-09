@@ -7,4 +7,4 @@ rake db:create
 echo "rake db:migrate"
 rake db:migrate
 echo "rake db:seed"
-rake db:seeds
+rake db:seed
