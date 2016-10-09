@@ -13,6 +13,9 @@
       <th><%= model_class.human_attribute_name(:Hotel) %></th>
       <th><%= model_class.human_attribute_name(:Restaurant) %></th>
       <th><%= model_class.human_attribute_name(:Place) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:picture_url) %></th>
+      <th><%= model_class.human_attribute_name(:desccription) %></th>
      
       <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
     </tr>
@@ -29,6 +32,10 @@
         <td><%= tour_package.hotel.name %></td>
         <td><%= tour_package.restaurant.name %></td>
         <td><%= tour_package.place.name %></td>
+         <td><%= tour_package.title %></td>
+        <td><%= tour_package.picture_url %></td>
+        <td><%= tour_package.desccription %></td>
+       
     
         <td>
          

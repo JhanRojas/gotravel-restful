@@ -69,6 +69,6 @@ class TourPackagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_package_params
-      params.require(:tour_package).permit(:flight_id, :hotel_id, :restaurant_id, :place_id)
+      params.require(:tour_package).permit(:flight_id, :hotel_id, :restaurant_id, :place_id, :title, :picture_url, :description)
     end
 end

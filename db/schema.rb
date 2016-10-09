@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008195352) do
+ActiveRecord::Schema.define(version: 20161009045614) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -104,8 +104,11 @@ ActiveRecord::Schema.define(version: 20161008195352) do
     t.integer  "hotel_id",      limit: 4
     t.integer  "restaurant_id", limit: 4
     t.integer  "place_id",      limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "title",         limit: 255
+    t.text     "picture_url",   limit: 65535
+    t.text     "description",   limit: 65535
   end
 
   add_index "tour_packages", ["flight_id"], name: "index_tour_packages_on_flight_id", using: :btree
