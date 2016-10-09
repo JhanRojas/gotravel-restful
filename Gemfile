@@ -63,3 +63,5 @@ gem "reform", "~> 2.0"
 
 # Country State Select
 gem 'country_state_select', '3.0.2'
+
+gem 'httparty', '~> 0.13.7'

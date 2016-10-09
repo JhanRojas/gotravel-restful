@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  post 'auth/verify' => 'omniauth_verifications#verify_token'
   
   resources :service_restaurants
   resources :flights
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
 
   get 'pages/sign_in'
 
-  root 'pages#index'
+  root 'pages#home'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
