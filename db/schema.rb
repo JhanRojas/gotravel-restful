@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20161009045614) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "api_keys", force: :cascade do |t|
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20161009045614) do
     t.string   "origin_city",         limit: 255
     t.string   "destination_country", limit: 255
     t.string   "destination_state",   limit: 255
+    t.string   "destination_city",    limit: 255
     t.date     "departure"
     t.date     "returning"
     t.decimal  "adult_price",                     precision: 10

@@ -17,6 +17,8 @@
   <%= error_span(@flight[:destination_state]) %>
   <%= f.input :destination_city, CountryStateSelect.city_options(label: "Destination City ", form: f, field_names: {  :state => :destination_state, :destination_city => :flight_destination_city } ) %>
   <%= error_span(@flight[:destination_city]) %>
+ 
+  
   <%= f.input :departure %>
   <%= error_span(@flight[:departure]) %>
   <%= f.input :returning %>

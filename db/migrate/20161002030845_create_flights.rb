@@ -6,7 +6,7 @@ class CreateFlights < ActiveRecord::Migration
       t.string :origin_city
       t.string :destination_country
       t.string :destination_state
-      t.string :destination_state
+      t.string :destination_city
       t.date :departure
       t.date :returning
       t.decimal :adult_price
