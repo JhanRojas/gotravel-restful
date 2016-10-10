@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tour_package_reservation.user %>
+</p>
+
+<p>
+  <strong>Tour package:</strong>
+  <%= @tour_package_reservation.tour_package %>
+</p>
+
+<%= link_to 'Edit', edit_tour_package_reservation_path(@tour_package_reservation) %> |
+<%= link_to 'Back', tour_package_reservations_path %>

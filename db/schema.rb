@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009045614) do
+ActiveRecord::Schema.define(version: 20161010225303) do
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -105,6 +105,16 @@ ActiveRecord::Schema.define(version: 20161009045614) do
 
   add_index "service_restaurants", ["restaurant_id"], name: "index_service_restaurants_on_restaurant_id", using: :btree
 
+  create_table "tour_package_reservations", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.integer  "tour_package_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "tour_package_reservations", ["tour_package_id"], name: "index_tour_package_reservations_on_tour_package_id", using: :btree
+  add_index "tour_package_reservations", ["user_id"], name: "index_tour_package_reservations_on_user_id", using: :btree
+
   create_table "tour_packages", force: :cascade do |t|
     t.integer  "flight_id",     limit: 4
     t.integer  "hotel_id",      limit: 4
@@ -133,6 +143,8 @@ ActiveRecord::Schema.define(version: 20161009045614) do
   add_foreign_key "flights", "airlines"
   add_foreign_key "rooms", "hotels"
   add_foreign_key "service_restaurants", "restaurants"
+  add_foreign_key "tour_package_reservations", "tour_packages"
+  add_foreign_key "tour_package_reservations", "users"
   add_foreign_key "tour_packages", "flights"
   add_foreign_key "tour_packages", "hotels"
   add_foreign_key "tour_packages", "places"
