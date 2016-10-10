@@ -1,0 +1,1 @@
+json.array! @tour_package_reservations, partial: 'tour_package_reservations/tour_package_reservation', as: :tour_package_reservation

@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-     <!-- <th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:level) %></th>
@@ -27,8 +27,9 @@
         <td><%= restaurant.websiteurl %></td>
         <td><%= restaurant.logourl %></td>
         <td><%= restaurant.status %></td>
-        <td><%=l restaurant.created_at %></td>
+        <!--<td><%=l restaurant.created_at %></td>-->
         <td>
+          
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_restaurant_path(restaurant), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

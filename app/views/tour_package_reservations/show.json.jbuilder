@@ -1,0 +1,1 @@
+json.partial! "tour_package_reservations/tour_package_reservation", tour_package_reservation: @tour_package_reservation

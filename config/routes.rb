@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :tour_package_reservations
   post 'auth/verify' => 'omniauth_verifications#verify_token'
   
   resources :service_restaurants

@@ -7,9 +7,16 @@
     <%= link_to "/tour_packages" do %>
         <i class="fa fa-briefcase fa-fw"></i> Tour Package
     <% end %>
+    <ul class="nav nav-second-level">
+        <li>
+        <%= link_to "/tour_package_reservations" do %>
+            <i class="fa fa-users"></i> Tour Package Reservation
+        <% end %>
+        </li> 
+    </ul>
 </li>
 
-        
+    
 
 <li>
     <%= link_to "/airlines" do %>
@@ -41,6 +48,13 @@
     <%= link_to "/restaurants" do %>
         <i class="fa fa-cutlery fa-fw"></i> Restaurant
     <% end %>
+     <ul class="nav nav-second-level">
+        <li>
+            <%= link_to "/service_restaurants" do %>
+                <i class="fa fa-coffee"></i> Service_restaurant
+            <% end %>
+        </li>
+    </ul>
 </li>
 <li>
     <%= link_to " /places" do %>
