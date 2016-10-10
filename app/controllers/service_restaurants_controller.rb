@@ -1,6 +1,6 @@
 class ServiceRestaurantsController < ApplicationController
   before_action :set_service_restaurant, only: [:show, :edit, :update, :destroy]
-
+  layout "appadmin"
   # GET /service_restaurants
   # GET /service_restaurants.json
   def index
@@ -69,6 +69,6 @@ class ServiceRestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_restaurant_params
-      params.require(:service_restaurant).permit(:nombre, :descripcion)
+      params.require(:service_restaurant).permit(:name, :description, :price, :restaurant_id)
     end
 end
