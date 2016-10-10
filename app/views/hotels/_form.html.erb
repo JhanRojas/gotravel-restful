@@ -12,6 +12,7 @@
     <%= f.input :country, label: "Country", collection: CountryStateSelect.countries_collection %>
     <%= f.input :state, CountryStateSelect.state_options(label: "State ", form: f, field_names: {  :country => :country, :state => :hotel_state } ) %>
     <%= f.input :city, CountryStateSelect.city_options(label: "City ", form: f, field_names: {  :state => :state, :city => :hotel_city } ) %>
+    <%= f.input :pictureUrl %>
   </div>
 
   <div class="form-actions">

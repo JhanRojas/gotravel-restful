@@ -11,7 +11,8 @@ class CreateHotels < ActiveRecord::Migration
       t.string :country
       t.string :state
       t.string :city
-
+      t.string :pictureUrl
+      
       t.timestamps null: false
     end
   end

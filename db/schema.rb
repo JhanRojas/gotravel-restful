@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20161009045614) do
     t.string   "country",              limit: 255
     t.string   "state",                limit: 255
     t.string   "city",                 limit: 255
+    t.string   "pictureUrl",           limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

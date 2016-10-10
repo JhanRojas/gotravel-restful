@@ -9,4 +9,5 @@ class Hotel < ActiveRecord::Base
   validates :country, presence: true
   validates :state, presence: true
   validates :city, presence: true
+  validates :pictureUrl, presence: true
 end
