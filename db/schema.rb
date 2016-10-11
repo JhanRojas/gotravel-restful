@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20161010225303) do
   create_table "airlines", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
+    t.string   "pictureUrl",  limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end

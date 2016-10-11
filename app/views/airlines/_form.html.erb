@@ -3,7 +3,7 @@
   <%= error_span(@airline[:name]) %>
   <%= f.input :description %>
   <%= error_span(@airline[:description]) %>
-
+  <%= f.input :pictureUrl %>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 airlines_path, :class => 'btn btn-default' %>

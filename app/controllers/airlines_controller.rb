@@ -69,6 +69,6 @@ class AirlinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def airline_params
-      params.require(:airline).permit(:name, :description)
+      params.require(:airline).permit(:name, :description, :pictureUrl)
     end
 end
