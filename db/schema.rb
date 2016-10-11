@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20161010225303) do
   end
 
   create_table "rooms", force: :cascade do |t|
+    t.string   "name",          limit: 255
     t.string   "room_type",     limit: 255
     t.string   "description",   limit: 255
     t.integer  "number_people", limit: 4

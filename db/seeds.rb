@@ -16,7 +16,34 @@ Hotel.create!(name: 'Westin', description: 'Sheraton Lima Hotel & Convention Cen
 Hotel.create!(name: 'Marriott', description: 'Sheraton Lima Hotel & Convention Center, un destello de riqueza cultural y tradiciones que resalta experiencias y aventuras únicas. Pasos de centros comerciales, Museos y Atracciones Locales Unicas en el mundo.', starts: 5, address: 'Paseo de la Republica 170', location_coordinates: '-12.057193,-77.036847', phone: '(51) (1) 3155000', raiting: 8, country: 'PE', state: 'LIM', city: 'Imperial', pictureUrl: 'http://techdrive.co/wp-content/uploads/2014/10/http-cache.marriott.com-propertyimages-m-miaap-miaap_main01.jpg')
 Hotel.create!(name: 'Sumaq', description: 'Sheraton Lima Hotel & Convention Center, un destello de riqueza cultural y tradiciones que resalta experiencias y aventuras únicas. Pasos de centros comerciales, Museos y Atracciones Locales Unicas en el mundo.', starts: 5, address: 'Paseo de la Republica 170', location_coordinates: '-12.057193,-77.036847', phone: '(51) (1) 3155000', raiting: 8, country: 'PE', state: 'LIM', city: 'Imperial', pictureUrl: 'http://www.luxurylatinamerica.com/peru/photos2/sumaq-exterior.jpg')
 Hotel.create!(name: 'Marina', description: 'Sheraton Lima Hotel & Convention Center, un destello de riqueza cultural y tradiciones que resalta experiencias y aventuras únicas. Pasos de centros comerciales, Museos y Atracciones Locales Unicas en el mundo.', starts: 5, address: 'Paseo de la Republica 170', location_coordinates: '-12.057193,-77.036847', phone: '(51) (1) 3155000', raiting: 8, country: 'PE', state: 'LIM', city: 'Imperial', pictureUrl: 'https://media-cdn.tripadvisor.com/media/photo-s/01/c7/f5/57/mancora-marina-hotel.jpg')
-Room.create!(room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+
+Room.create!(name: 'Suite', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+Room.create!(name: 'Doble', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+Room.create!(name: 'Triple', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+Room.create!(name: 'Panoramica', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+Room.create!(name: 'Solo1', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+Room.create!(name: 'Duplex', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 1)
+
+Room.create!(name: 'Suite', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 2)
+Room.create!(name: 'Doble', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 2)
+Room.create!(name: 'Triple', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 2)
+Room.create!(name: 'Panoramica', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 2)
+
+Room.create!(name: 'Suite', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 3)
+Room.create!(name: 'Doble', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 3)
+Room.create!(name: 'Triple', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 3)
+Room.create!(name: 'Panoramica', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 3)
+
+Room.create!(name: 'Suite', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 4)
+Room.create!(name: 'Doble', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 4)
+Room.create!(name: 'Triple', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 4)
+Room.create!(name: 'Panoramica', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 4)
+
+Room.create!(name: 'Suite', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 5)
+Room.create!(name: 'Doble', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 5)
+Room.create!(name: 'Triple', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 5)
+Room.create!(name: 'Panoramica', room_type: 'Suite', description: 'Mejor y más lujosa habitacion, cuentan con dos habitaciones dobles, 2 baños, salón y estancia. ', number_people: 4, price: 200, hotel_id: 5)
+
 
 Airline.create!(name: 'ATSA', description: 'Pioneros en brindar un servicio integral de vuelos privados a nivel nacional de clase mundial, garantizando la excelencia y calidad en todo momento.')
 Airline.create!(name: 'LATAM', description: 'Nuestra flota se compone de modernos aviones Boeing y Airbus, adquiridos para brindar la mejor experiencia a bordo. Estas aeronaves poseen un diseño y tecnología de última generación, que entregan más comodidad, seguridad y eficiencia durante tu viaje.')
