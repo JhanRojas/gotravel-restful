@@ -52,6 +52,9 @@ Airline.create!(name: 'Peruvian', description: 'Peruvian es la línea aérea de 
 Flight.create!(origin_country: "PE", origin_state: "LIM", origin_city: "Lince", destination_country: "PE", destination_state: "ARE", destination_city: "Arequipa", departure: "2016-10-17", returning: "2016-10-22", adult_price: 100, minor_price: 60, capacity: 70, airline_id: 4)
 
 Restaurant.create!(name: 'Restaurante Royal', description: 'El autentico sabor oriental', level: 5, websiteurl: 'http://www.restauranteroyal.com', logourl: 'http://www.restauranteroyal.com/imagenes/logo3.gif', status: 3)
+Restaurant.create!(name: 'La Rosa Nautica', description: 'Donde se encuentra la mejor comida Marina', level: 5, websiteurl: 'www.larosanautica.com', logourl: 'http://cde.peru.com/ima/0/0/2/5/9/259796/583x437.jpg', status: 3)
+Restaurant.create!(name: 'Astrid & Gaston', description: 'Lugar de encuentro de la mejor coomida gourmet del Peru', level: 5, websiteurl: 'http://www.astridygaston.com/', logourl: 'http://cristinavallarino.com/wp-content/uploads/2014/08/astrid-y-gaston.jpg', status: 3)
+Restaurant.create!(name: 'LA Bistecca', description: 'Punto de encuentro del Mejor Buffet de Lima', level: 5, websiteurl: 'http://www.labisteccalima.com/', logourl: 'http://static.wixstatic.com/media/a7ea1a_92c8929ac2a141a1b2145dc66dd30a62.jpg_srz_326_192_85_22_0.50_1.20_0.00_jpg_srz', status: 3)
 
 ServiceRestaurant.create!(name: 'Desayuno', description: 'Café con leche + Pan con huevo', price: 15, restaurant_id: 1)
 ServiceRestaurant.create!(name: 'Almuerzo', description: 'Sopa a la minuta + Lomo saltado + refresco', price: 30, restaurant_id: 1)

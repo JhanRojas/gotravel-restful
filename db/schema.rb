@@ -106,6 +106,12 @@ ActiveRecord::Schema.define(version: 20161010225303) do
 
   add_index "service_restaurants", ["restaurant_id"], name: "index_service_restaurants_on_restaurant_id", using: :btree
 
+  create_table "statuses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "tour_package_reservations", force: :cascade do |t|
     t.integer  "user_id",         limit: 4
     t.integer  "tour_package_id", limit: 4
