@@ -1,2 +1,2 @@
-json.extract! flight, :id, :origin_country, :origin_state, :origin_city, :destination_country, :destination_state, :destination_city, :departure, :returning, :adult_price, :minor_price, :capacity, :airline_id, :created_at, :updated_at
+json.extract! flight, :id, :origin_country, :origin_state, :origin_city, :destination_country, :destination_state, :destination_city, :departure, :returning, :adult_price, :minor_price, :capacity, :airline_id, :pictureUrl, :created_at, :updated_at
 json.url flight_url(flight, format: :json)

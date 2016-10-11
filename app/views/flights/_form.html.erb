@@ -29,10 +29,9 @@
   <%= error_span(@flight[:minor_price]) %>
   <%= f.input :capacity %>
   <%= error_span(@flight[:capacity]) %>
-  
   <%= f.association :airline %>
   <%= error_span(@flight[:airline_id]) %>
-
+  <%= f.input :pictureUrl %>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 flights_path, :class => 'btn btn-default' %>

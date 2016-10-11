@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161010225303) do
     t.decimal  "minor_price",                     precision: 10
     t.integer  "capacity",            limit: 4
     t.integer  "airline_id",          limit: 4
+    t.string   "pictureUrl",          limit: 255
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
   end

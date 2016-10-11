@@ -13,7 +13,7 @@ class CreateFlights < ActiveRecord::Migration
       t.decimal :minor_price
       t.integer :capacity
       t.references :airline, index: true, foreign_key: true
-
+      t.string :pictureUrl
       t.timestamps null: false
     end
   end
